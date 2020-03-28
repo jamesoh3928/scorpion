@@ -13,3 +13,10 @@ Features we are planning to add
 -공지사항 
 
 -More
+
+
+Framework we are using
+
+Python Django
+
+documentation: https://docs.djangoproject.com/en/3.0/

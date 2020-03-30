@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">    <!-- this tag allows writing Korean -->
+    <meta name="전문대항군연대 커뮤니티" content="전문대항군연대 현역, 전역, 가족들을 위한 공간">   <!-- when the website is shared, this informations follows -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>전갈 커뮤니티</title>   <!-- tab name -->
+
+    {% if title %}
+        <title>전갈 커뮤니티 - {{ title }}</title>
+    {% else %}
+        <title>전갈 커뮤니티</title>
+    {% endif %}
+    
+</head>
+<body>
+    <header>
+      <nav>
+        <div>
+          <a href="{% url 'blog-home' %}">전갈 커뮤니티</a>
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggle" aria-controls="navbarToggle" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+          </button>
+          <div>
+            <div>
+              <a href="{% url 'blog-home' %}">홈</a>
+              <a href="{% url 'blog-about' %}">소개</a>
+            </div>
+            <!-- Navbar Right Side -->
+            <div>
+              <a href="#">로그인</a>
+              <a href="#">회원가입</a>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+    
+        
+    <h1>
+        전갈 커뮤니티
+    </h1>
+    
+    <div>
+        {% block content %}{% endblock %}
+    </div>
+
+</body>
+</html>

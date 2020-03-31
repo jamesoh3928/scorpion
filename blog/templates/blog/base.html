@@ -1,3 +1,4 @@
+{% load static %}
 <!DOCTYPE html>
 <html>
 <head>
@@ -5,46 +6,51 @@
     <meta charset="utf-8">    <!-- this tag allows writing Korean -->
     <meta name="전문대항군연대 커뮤니티" content="전문대항군연대 현역, 전역, 가족들을 위한 공간">   <!-- when the website is shared, this informations follows -->
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous"> 
+    
+    <link rel="stylesheet" type="text/css" href="{% static 'blog/main.css' %}">
+    
     <title>전갈 커뮤니티</title>   <!-- tab name -->
 
     {% if title %}
-        <title>전갈 커뮤니티 - {{ title }}</title>
+        <title a href={% url 'blog-home' %}>전갈 커뮤니티 - {{ title }}</title> <!--TODO if it works -->
     {% else %}
-        <title>전갈 커뮤니티</title>
+        <title a href={% url 'blog-home' %}>전갈 커뮤니티</title> <!--TODO if it works -->
     {% endif %}
     
 </head>
 <body>
     <header>
-      <nav>
+      <nav class="fixed-top">
         <div>
-          <a href="{% url 'blog-home' %}">전갈 커뮤니티</a>
-          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggle" aria-controls="navbarToggle" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
+          <a class="navbar-brand mr-4" href="{% url 'blog-home' %}">전갈 커뮤니티</a>
+          <span></span>
           </button>
           <div>
             <div>
               <a href="{% url 'blog-home' %}">홈</a>
-              <a href="{% url 'blog-about' %}">소개</a>
+              <a href="{% url 'blog-about'%}">소개</a>
             </div>
             <!-- Navbar Right Side -->
             <div>
               <a href="#">로그인</a>
-              <a href="#">회원가입</a>
+              <a  href="#">회원가입</a>
             </div>
           </div>
         </div>
       </nav>
     </header>
     
-        
-    <h1>
-        전갈 커뮤니티
-    </h1>
+    <main role="main" class="container">
+        <div>
+            {% block content %}{% endblock %}
+        </div>
+    </main>
     
-    <div>
-        {% block content %}{% endblock %}
-    </div>
-
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>  
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
 </body>
 </html>

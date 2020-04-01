@@ -22,30 +22,46 @@
     
 </head>
 <body>
-    <header>
-      <nav class="fixed-top">
-        <div>
-          <a class="navbar-brand mr-4" href="{% url 'blog-home' %}">전갈 커뮤니티</a>
-          <span></span>
-          </button>
-          <div>
-            <div>
-              <a href="{% url 'blog-home' %}">홈</a>
-              <a href="{% url 'blog-about'%}">소개</a>
-            </div>
-            <!-- Navbar Right Side -->
-            <div>
-              <a href="#">로그인</a>
-              <a  href="#">회원가입</a>
-            </div>
-          </div>
-        </div>
-      </nav>
-    </header>
     
-    <main role="main" class="container">
-        <div>
-            {% block content %}{% endblock %}
+    <header class="site-header"> <!-- TODO change design later -->
+        <nav class="navbar navbar-expand-md navbar-dark bg-steel fixed-top">
+            <div class="container">
+                <a class="navbar-brand mr-4" href="/">전갈 커뮤니티</a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggle" aria-controls="navbarToggle" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarToggle">
+                    <div class="navbar-nav mr-auto">
+                        <a class="nav-item nav-link" href="/">홈</a>
+                        <a class="nav-item nav-link" href="/about">소개</a>
+                    </div>
+                    <!-- Navbar Right Side -->
+                    <div class="navbar-nav">
+                        <a class="nav-item nav-link" href="#">로그인</a>
+                        <a class="nav-item nav-link" href="#">회원가입</a>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </header>    
+    
+    <main role="main" class="container"> <!--TODO Change design later-->
+        <div class="row">
+            <div class="col-md-8">
+                {% block content %}{% endblock %}
+            </div>
+            <div class="col-md-4">
+                <div class="content-section">
+                    <h3>바로가기</h3>
+                        <ul class="list-group">
+                            <a href='#'><li class="list-group-item list-group-item-light">공지사항</li></a>
+                            <a href='#'><li class="list-group-item list-group-item-light">최근 포스트</li></a>
+                            <a href='#'><li class="list-group-item list-group-item-light">자유게시판</li></a>
+                            <a href='#'><li class="list-group-item list-group-item-light">휴가 관리</li></a>
+                        </ul>
+                    </p>
+                </div>
+            </div>
         </div>
     </main>
     

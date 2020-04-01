@@ -2,15 +2,17 @@
 
 {% block content %}
     {% for post in posts %}
-        <article>
-          <div>
-            <div>
-              <a href="#">{{ post.author }}</a>
-              <small>{{ post.date_posted }}</small>
+    <article class="media content-section"> <!--TODO Change Design -->
+        <div class="media-body">
+            <div class="article-metadata">
+                <a class="mr-2" href="#">{{ post.author }}</a>
+                <small class="text-muted">{{ post.date_posted|date:"F d, Y" }}</small> <!--Date format-->
             </div>
-            <h2><a href="#">{{ post.title }}</a></h2>
-            <p>{{ post.content }}</p>
-          </div>
-        </article>
+            <h2>
+                <a class="article-title" href="#">{{ post.title }}</a>
+            </h2>
+            <p class="article-content">{{ post.content }}</p>
+        </div>
+    </article>
     {% endfor %}
 {% endblock content %}

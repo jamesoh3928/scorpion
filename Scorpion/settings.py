@@ -30,7 +30,8 @@ ALLOWED_HOSTS = [".goorm.io"]
 
 # Application definition
 
-INSTALLED_APPS = [
+INSTALLED_APPS = [ #Add when new apps are made
+    'users.apps.UsersConfig',
     'blog.apps.BlogConfig',
     'django.contrib.admin',
     'django.contrib.auth',

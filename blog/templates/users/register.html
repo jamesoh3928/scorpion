@@ -1,0 +1,25 @@
+{% extends "blog/base.html" %}
+
+{% block content %}
+    <div class="content-section">
+        <form method="POST">  <!-- csrf_token is for security -->
+            {% csrf_token %}         
+            <fieldset class="form-group">
+                <legend class="border-bottom mb-4">
+                    전갈 커뮤니티 회원이 되세요!
+                </legend>
+                {{ form }}
+            </fieldset>
+            <div class="form-group">
+                <button class="btn btn-outline-info" type="submit">
+                    회원가입
+                </button>
+            </div>
+        </form>    
+        <div class="border-top pt-3">
+            <small class="text-muted">
+                계정이 이미 존재합니까? <a class="ml-2" href="#">로그인</a>
+            </small>
+        </div>
+    </div>
+{% endblock content %}

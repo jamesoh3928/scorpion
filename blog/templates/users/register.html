@@ -1,5 +1,5 @@
 {% extends "blog/base.html" %}
-
+{% load crispy_forms_tags %}
 {% block content %}
     <div class="content-section">
         <form method="POST">  <!-- csrf_token is for security -->
@@ -8,7 +8,7 @@
                 <legend class="border-bottom mb-4">
                     전갈 커뮤니티 회원이 되세요!
                 </legend>
-                {{ form.as_p }}
+                {{ form|crispy }}    <!-- Crispy filter -->
             </fieldset>
             <div class="form-group">
                 <button class="btn btn-outline-info" type="submit">

@@ -37,8 +37,13 @@
                     </div>
                     <!-- Navbar Right Side -->
                     <div class="navbar-nav">
-                        <a class="nav-item nav-link" href="#">로그인</a>
-                        <a class="nav-item nav-link" href="/register">회원가입</a>
+                        {% if user.is_authenticated %}
+                            <a class="nav-item nav-link" href="{% url 'profile' %}">프로필</a>
+                            <a class="nav-item nav-link" href="{% url 'logout' %}">로그아웃</a>
+                        {% else %}
+                            <a class="nav-item nav-link" href="{% url 'login' %}">로그인</a>
+                            <a class="nav-item nav-link" href="{% url 'register' %}">회원가입</a>
+                        {% endif %}
                     </div>
                 </div>
             </div>

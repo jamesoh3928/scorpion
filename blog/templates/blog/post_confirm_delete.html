@@ -1,0 +1,16 @@
+{% extends "blog/base.html" %}
+{% block content %}
+    <div class="content-section">
+        <form method="POST">  <!-- csrf_token is for security -->
+            {% csrf_token %}         
+            <fieldset class="form-group">
+                <legend class="border-bottom mb-4">포스트 지우기</legend>
+                <h2>포스트를 지우시겠습니까? "{{ object.title }}"</h2>
+            </fieldset>
+            <div class="form-group">
+                <button class="btn btn-outline-danger" type="submit">지우기</button>
+                <a class="btn btn-outline-secondary" href="{% url 'post-detail' object.id %}">취소</a>
+            </div>
+        </form>
+    </div>
+{% endblock content %}

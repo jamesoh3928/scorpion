@@ -38,6 +38,7 @@
                     <!-- Navbar Right Side -->
                     <div class="navbar-nav">
                         {% if user.is_authenticated %}
+                            <a class="nav-item nav-link" href="{% url 'post-create' %}">새 포스트</a>
                             <a class="nav-item nav-link" href="{% url 'profile' %}">프로필</a>
                             <a class="nav-item nav-link" href="{% url 'logout' %}">로그아웃</a>
                         {% else %}

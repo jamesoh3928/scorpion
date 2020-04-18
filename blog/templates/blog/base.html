@@ -68,9 +68,9 @@
                     <h3>바로가기</h3>
                         <ul class="list-group">
                             <a href='#'><li class="list-group-item list-group-item-light">공지사항</li></a>
-                            <a href='#'><li class="list-group-item list-group-item-light">최근 포스트</li></a>
-                            <a href='#'><li class="list-group-item list-group-item-light">자유게시판</li></a>
-                            <a href='#'><li class="list-group-item list-group-item-light">휴가 관리</li></a>
+                            <a href="{% url 'blog-home' %}"><li class="list-group-item list-group-item-light">최근 포스트</li></a>
+                            <a href="{% url 'blog-home' %}"><li class="list-group-item list-group-item-light">자유게시판</li></a>
+                            <a href="{% url 'vacation' %}"><li class="list-group-item list-group-item-light">휴가 관리</li></a>
                         </ul>
                     </p>
                 </div>

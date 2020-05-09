@@ -1,5 +1,5 @@
 {% extends "blog/base.html" %}
-{% load crispy_forms_tags %}
+
 {% block content %}
     <div class="content-section">
         <form method="POST">  <!-- csrf_token is for security -->
@@ -8,7 +8,7 @@
                 <legend class="border-bottom mb-4">
                     전갈 커뮤니티 회원이 되세요!
                 </legend>
-                {{ form|crispy }}    <!-- Crispy filter -->
+                {{ form }}
             </fieldset>
             <div class="form-group">
                 <button class="btn btn-outline-info" type="submit">
@@ -18,7 +18,7 @@
         </form>    
         <div class="border-top pt-3">
             <small class="text-muted">
-                계정이 이미 존재합니까? <a class="ml-2" href="{% url 'login' %}">로그인</a>
+                계정이 이미 존재합니까? <a class="ml-2" href="#">로그인</a>
             </small>
         </div>
     </div>

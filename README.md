@@ -12,12 +12,6 @@ Features we are planning to add
 
 -공지사항 
 
--메신저
-
--전역일 계산기
-
--군인 관련 정보 링크 모아두기
-
 -More
 
 

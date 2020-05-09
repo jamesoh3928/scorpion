@@ -32,8 +32,8 @@ ALLOWED_HOSTS = [".goorm.io", '127.0.0.1']
 
 INSTALLED_APPS = [ #Add when new apps are made
     'users.apps.UsersConfig',
-    'crispy_forms',
     'blog.apps.BlogConfig',
+    'announcement.apps.AnnouncementConfig',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -106,9 +106,9 @@ AUTH_PASSWORD_VALIDATORS = [
 # Internationalization
 # https://docs.djangoproject.com/en/2.2/topics/i18n/
 
-LANGUAGE_CODE = 'ko-kr'
+LANGUAGE_CODE = 'en-us'
 
-TIME_ZONE = 'Asia/Seoul'
+TIME_ZONE = 'UTC'
 
 USE_I18N = True
 
@@ -121,11 +121,3 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/2.2/howto/static-files/
 
 STATIC_URL = '/static/'
-
-MEDIA_ROOT = os.path.join(BASE_DIR, 'media' )    #directory that uploaded file will be saved
-MEDIA_URL = '/media/'
-
-CRISPY_TEMPLATE_PACK = 'bootstrap4'    #Change bootsrap setting to bootstrap4
-
-LOGIN_REDIRECT_URL = 'blog-home'
-LOGIN_URL = 'login'
